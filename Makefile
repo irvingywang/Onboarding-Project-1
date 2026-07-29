@@ -196,3 +196,13 @@ clean:
 -include $(wildcard $(BUILD_DIR)/*.d)
 
 # *** EOF ***
+
+flash: $(BUILD_DIR)/$(TARGET).elf
+	@echo "Flashing $(TARGET).elf to the board..."
+	openocd -f interface/stlink.cfg -f target/stm32f1x.cfg \
+	  -c "init" \
+	  -c "reset halt" \
+	  -c "flash write_image erase $<" \
+	  -c "reset run" \
+	  -c "shutdown"
+	@echo "Flashing complete!"

@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "osx": {
+                "command": "make -j V=1"
+            },
+            "linux": {
+                "command": "make"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "osx": {
+                "command": "make clean"
+            },
+            "linux": {
+                "command": "make clean"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build and flash",
+            "type": "shell",
+            "osx": {
+                "command": "make flash"
+            },
+            "linux": {
+                "command": "make flash"
+            },
+            "dependsOn": [
+                "build"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        }
+    ]
+}
