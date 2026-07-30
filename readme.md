@@ -116,12 +116,12 @@ cd Onboarding-Project-1
 code .
 ```
 
-Open the `main.c` file located in `src/`. You should see a lot of stuff but you can ignore everything for now, and just locate `main()`.
+Open the `main.c` file located in `Core/Src/`. You should see a lot of stuff but you can ignore everything for now, and just locate `main()`.
 
 ## Part 3: Your First Function!
 
 1. In the `main()` function, find the infinite while loop (`while(1)`). You will be writing your code in here.
-2. Paste the following line of code in the while loop under the comment that says `USER CODE BEGIN 3`. This line of code uses a HAL function to set GPIO pin B3 to a high state (1), turning on the green LED connected to it.
+2. Paste the following line of code in the while loop. This line of code uses a HAL function to set GPIO pin B3 to a high state (1), turning on the green LED connected to it.
    ```c
    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
    ```
